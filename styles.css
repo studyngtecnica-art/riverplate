@@ -1,0 +1,648 @@
+/* Variables de Colores de River Plate */
+:root {
+    --color-blanco: #FFFFFF;
+    --color-rojo-banda: #D00000; /* Rojo principal de la banda */
+    --color-negro: #000000;
+    --color-gris-claro: #f4f4f4;
+    --color-gris-oscuro: #333333;
+    --color-gris-medio: #cccccc;
+}
+
+/* Reset y Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--color-gris-claro);
+    color: var(--color-gris-oscuro);
+}
+
+/* REGLA GENERAL PARA AJUSTAR IMÁGENES EN RESPONSIVE */
+img {
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Ayuda a eliminar espacios extra bajo la imagen */
+}
+
+/* ---------------------- */
+/* CABECERA Y NAVEGACIÓN  */
+/* ---------------------- */
+
+header {
+    background-color: var(--color-rojo-banda); /* Cabecera en rojo */
+    color: var(--color-blanco);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--color-negro); /* Hover en negro */
+}
+
+/* ---------------------- */
+/* SECCIÓN PRINCIPAL HERO (CARRUSEL de INDEX) */
+/* ---------------------- */
+
+.hero {
+    padding: 40px;
+    text-align: center;
+}
+
+.slider-container {
+    position: relative;
+    /* Mantenemos el ancho original de 1000px para el carrusel de la principal */
+    max-width: 1000px; 
+    margin: 0 auto 40px auto;
+    overflow: hidden; 
+    border: 5px solid var(--color-rojo-banda); /* Borde en rojo */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-slider {
+    display: flex; 
+    width: 100%;
+    height: 450px; 
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover; 
+    display: none; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: block; 
+}
+
+/* Superposición (Overlay) y Botón CTA */
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    color: var(--color-blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.slider-overlay h2 {
+    font-size: 3.5em;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.slider-overlay p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-blanco);
+    color: var(--color-rojo-banda); /* Texto rojo */
+    text-decoration: none;
+    padding: 15px 30px;
+    border: 3px solid var(--color-rojo-banda); /* Borde rojo */
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--color-rojo-banda);
+    color: var(--color-blanco);
+    border-color: var(--color-blanco);
+}
+
+/* Botones de navegación del carrusel */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn { left: 0; border-radius: 0 5px 5px 0; }
+.next-btn { right: 0; border-radius: 5px 0 0 5px; }
+
+
+/* ---------------------- */
+/* SECCIÓN NOTICIAS       */
+/* ---------------------- */
+
+.noticias {
+    /* Mantenemos el ancho original de 1000px para las noticias de la principal */
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.noticias h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--color-rojo-banda);
+}
+
+/* Estilo para los enlaces de noticias */
+.noticia-link {
+    text-decoration: none; 
+    color: inherit;       
+    display: block;       
+    margin-bottom: 15px;  
+    transition: transform 0.2s; 
+}
+
+.noticias .card {
+    background-color: var(--color-blanco);
+    border-left: 5px solid var(--color-rojo-banda); /* Barra de detalle en rojo */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.noticia-link:hover .card {
+    background-color: var(--color-gris-claro); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    transform: translateY(-2px); 
+}
+
+.card h4 {
+    margin-bottom: 5px;
+    color: var(--color-rojo-banda); /* Título de noticia en rojo */
+}
+
+
+/* ---------------------- */
+/* DETALLE DE NOTICIA, HISTORIA, CALENDARIO Y POSICIONES */
+/* ---------------------- */
+
+/* REDUCIMOS EL ANCHO A 700px SOLO PARA CONTENIDO DETALLE/INFO */
+.detalle-container, 
+.historia-container, 
+.calendario-container, 
+.posiciones-container, 
+.todo-container {
+    max-width: 700px; 
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detalle-container h1, .historia-container h1, .calendario-container h1, .posiciones-container h1, .todo-container h1 {
+    color: var(--color-rojo-banda);
+    text-align: center;
+    margin-bottom: 25px;
+}
+.fecha-actualizacion {
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 20px;
+}
+
+/* CALENDARIO */
+.partidos-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.partidos-table th, .partidos-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--color-gris-claro);
+}
+.partidos-table th {
+    background-color: var(--color-rojo-banda);
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+.proximo {
+    font-weight: bold;
+    background-color: #ffcccc;
+}
+.ganado { color: green; font-weight: bold; }
+.perdido { color: var(--color-rojo-banda); font-weight: bold; }
+.empatado { color: orange; font-weight: bold; }
+
+
+/* ESTILOS ESPECÍFICOS PARA LA TABLA DE POSICIONES */
+.posiciones-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+.posiciones-table th, .posiciones-table td {
+    padding: 10px 5px;
+    border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.posiciones-table th {
+    background-color: var(--color-rojo-banda);
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+/* Columna de Posición y Puntos con énfasis */
+.posiciones-table td:nth-child(1),
+.posiciones-table td:last-child {
+    font-weight: bold;
+}
+
+/* Destacar la fila de River Plate */
+.river-posicion {
+    background-color: #ffe0e0; /* Rojo claro */
+    font-weight: bold;
+    border: 2px solid var(--color-rojo-banda);
+}
+
+/* Estilo para rivales y otros equipos */
+.rival {
+    font-style: italic;
+    color: var(--color-gris-oscuro);
+}
+
+
+/* ---------------------- */
+/* TIENDA Y CARRUSELES DE PRODUCTOS */
+/* ---------------------- */
+
+/* CONTENEDOR DE LA TIENDA (DEBE SER AMPLIO) */
+.tienda-container {
+    max-width: 1200px; /* Ancho amplio para la sección de productos */
+    margin: 40px auto;
+    padding: 20px;
+}
+.tienda-container h1 {
+    color: var(--color-rojo-banda);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* CONTENEDOR DE BANNER ÚNICO Y ANCHO */
+.banner-unico {
+    /* El ancho es 100% del contenedor de la tienda (1200px) */
+    width: 100%; 
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.banner-imagen-unica {
+    width: 100%;
+    height: 250px; /* Altura fija para un banner prominente */
+    object-fit: cover; /* Asegura que la imagen cubra el área */
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.banner-imagen-unica:hover {
+    transform: scale(1.02); /* Pequeño zoom al pasar el ratón */
+}
+
+/* Estilos de las secciones de productos (se mantienen) */
+.seccion-tienda {
+    margin-bottom: 50px;
+}
+.seccion-tienda h2 {
+    color: var(--color-rojo-banda);
+    border-left: 5px solid var(--color-rojo-banda);
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del Carrusel (Permite el desplazamiento horizontal) */
+.productos-carrusel {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll; /* Habilita el desplazamiento horizontal */
+    padding: 10px 0;
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+}
+
+.producto-card {
+    background-color: var(--color-blanco);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-shrink: 0; 
+    width: 250px; /* Ancho fijo para las tarjetas */
+    scroll-snap-align: start; 
+}
+.producto-card img {
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+.btn-carrito {
+    background-color: var(--color-rojo-banda);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+.btn-carrito:hover {
+    background-color: var(--color-negro);
+}
+
+/* CARRITO DE COMPRAS (Estilos se mantienen) */
+.carrito-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.carrito-container h1 {
+    color: var(--color-rojo-banda);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed var(--color-gris-medio);
+    padding: 15px 0;
+}
+.item-carrito h4 {
+    color: var(--color-rojo-banda);
+}
+.item-carrito button {
+    background-color: var(--color-gris-medio);
+    color: var(--color-negro);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.item-carrito button:hover {
+    background-color: var(--color-rojo-banda);
+    color: var(--color-blanco);
+}
+#total-final {
+    margin-top: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: right;
+    color: var(--color-negro);
+    padding-top: 15px;
+    border-top: 2px solid var(--color-rojo-banda);
+}
+#botones-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+.btn-accion {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+.btn-comprar {
+    background-color: green;
+    color: var(--color-blanco);
+    border: none;
+}
+.btn-vaciar {
+    background-color: var(--color-rojo-banda);
+    color: var(--color-blanco);
+    border: none;
+}
+.btn-accion:hover {
+    opacity: 0.8;
+}
+
+
+/* ---------------------- */
+/* PIE DE PÁGINA          */
+/* ---------------------- */
+
+footer {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ======================================================= */
+/* MEDIA QUERIES (AJUSTES PARA DISPOSITIVOS MÓVILES Y TABLETAS) */
+/* ======================================================= */
+
+/* 1. TABLETAS Y DISPOSITIVOS GRANDES (Max-width: 900px) */
+@media (max-width: 900px) {
+    
+    /* Contenedores principales y espaciado */
+    .hero, .noticias, .tienda-container {
+        padding: 20px; /* Reducir padding general */
+    }
+    
+    /* Carrusel Principal (Index) */
+    .slider-container {
+        max-width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .image-slider {
+        height: 350px; /* Reducir altura del carrusel */
+    }
+    .slider-overlay h2 {
+        font-size: 2.5em; /* Reducir título */
+    }
+    .slider-overlay p {
+        font-size: 1.1em;
+    }
+
+    /* Tablas (Calendario y Posiciones) */
+    .partidos-table th, .partidos-table td,
+    .posiciones-table th, .posiciones-table td {
+        padding: 8px 4px; /* Reducir padding en celdas */
+        font-size: 0.8em; /* Reducir tamaño de fuente */
+    }
+    
+    /* Ocultar algunas columnas en la tabla de posiciones en pantallas más pequeñas */
+    .posiciones-table th:nth-child(6), /* Columna P (Perdidos) */
+    .posiciones-table td:nth-child(6), 
+    .posiciones-table th:nth-child(7), /* Columna GF (Goles a Favor) */
+    .posiciones-table td:nth-child(7),
+    .posiciones-table th:nth-child(8), /* Columna GC (Goles en Contra) */
+    .posiciones-table td:nth-child(8) {
+        display: none;
+    }
+    
+    /* Tienda y Productos */
+    .tienda-container {
+        padding: 10px;
+    }
+    .productos-carrusel {
+        padding-bottom: 20px; /* Más espacio abajo para el scrollbar en móvil */
+    }
+    
+    .banner-imagen-unica {
+        height: 180px; /* Reducir altura del banner único */
+    }
+}
+
+
+/* 2. MÓVILES PEQUEÑOS (Max-width: 600px) */
+@media (max-width: 600px) {
+    
+    /* Cabecera y Navegación */
+    header {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+    header h1 {
+        margin-bottom: 10px;
+    }
+    nav ul {
+        flex-wrap: wrap; /* Permite que los enlaces se envuelvan */
+        justify-content: center;
+    }
+    nav ul li a {
+        padding: 5px 10px;
+        margin: 5px;
+        font-size: 0.9em;
+    }
+    
+    /* Carrusel Principal (Index) */
+    .image-slider {
+        height: 250px; /* Más pequeño para móviles */
+    }
+    .slider-overlay h2 {
+        font-size: 1.8em; 
+    }
+    .slider-overlay p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .prev-btn, .next-btn {
+        padding: 5px 8px;
+        font-size: 1em;
+    }
+    
+    /* Noticia y General */
+    .noticias h3 {
+        font-size: 1.5em;
+    }
+
+    /* Tablas (Calendario y Posiciones) */
+    .partidos-table {
+        display: block; /* Permite scroll horizontal en la tabla de partidos */
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    /* El contenedor de la tabla de posiciones se ajusta con el CSS anterior, pero ocultamos más columnas si es necesario */
+    .posiciones-table th:nth-child(4), /* Columna G (Ganados) */
+    .posiciones-table td:nth-child(4), 
+    .posiciones-table th:nth-child(5), /* Columna E (Empatados) */
+    .posiciones-table td:nth-child(5) {
+        display: none;
+    }
+    
+    /* Tienda */
+    .producto-card {
+        width: 180px; /* Tarjetas más angostas en móvil */
+    }
+    
+    .banner-imagen-unica {
+        height: 120px; /* Banner más bajo en móvil */
+    }
+
+    /* Carrito */
+    .carrito-container {
+        padding: 15px;
+    }
+    .item-carrito {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+    .item-carrito div:last-child {
+        text-align: left !important;
+        margin-top: 5px;
+    }
+    .item-carrito button {
+        margin-top: 5px;
+    }
+    #total-final {
+        font-size: 1.4em;
+        text-align: center;
+    }
+    #botones-acciones {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Oficial - River Plate</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* Estilos específicos para la Tienda */
+        .tienda-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .tienda-container h1 {
+            color: var(--color-rojo-banda);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .producto-card p.precio {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--color-rojo-banda); 
+            margin-bottom: 15px;
+        }
+        .producto-card .precio-oferta {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: green;
+            margin-bottom: 15px;
+        }
+        .producto-card .precio-anterior {
+            color: var(--color-gris-oscuro);
+            text-decoration: line-through;
+            font-size: 1em;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>C. A. River Plate</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="calendario.html">Partidos</a></li>
+                <li><a href="historia.html">Nuestra Historia</a></li>
+                <li><a href="tienda.html" class="active">Tienda Oficial</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tienda-container">
+            <h1>Tienda Oficial | El Más Grande</h1>
+            <p style="text-align: center; margin-bottom: 20px;">Lleva los colores con orgullo. Productos oficiales de River Plate.</p>
+
+            <section class="banner-unico">
+                <img src="riverplate.webp" alt="Banner: Nueva Campera Oficial 20% OFF - Sólo por esta semana" class="banner-imagen-unica">
+            </section>
+            <div class="seccion-tienda" style="margin-top: 50px;">
+                <h2>⭐ Productos Destacados</h2>
+                <div class="productos-carrusel">
+                    
+                    <div class="producto-card" data-id="1">
+                        <img src="titular2025.jpg" alt="Camiseta Titular River 2024">
+                        <h3>Camiseta Titular 2025</h3>
+                        <p class="precio">$35.999</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+
+                    <div class="producto-card" data-id="2">
+                        <img src="campera.png" alt="Campera Entrenamiento River">
+                        <h3>Campera Entrenamiento</h3>
+                        <p class="precio">$29.500</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+
+                    <div class="producto-card" data-id="3">
+                        <img src="pelota.jpg" alt="Pelota Oficial River Plate">
+                        <h3>Pelota Oficial</h3>
+                        <p class="precio">$15.999</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+                    
+                    <div class="producto-card" data-id="4">
+                        <img src="shorttitular.png" alt="Short Oficial River">
+                        <h3>Short Oficial</h3>
+                        <p class="precio">$18.500</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="seccion-tienda">
+                <h2>✨ Novedades</h2>
+                <div class="productos-carrusel">
+                    
+                    <div class="producto-card" data-id="5">
+                        <img src="alternativa2025.avif" alt="Camiseta Alternativa River">
+                        <h3>Camiseta Alternativa</h3>
+                        <p class="precio">$35.999</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+
+                    <div class="producto-card" data-id="8">
+                        <img src="llavero.jpg" alt="Llavero Monumental">
+                        <h3>Llavero Monumental</h3>
+                        <p class="precio">$3.500</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seccion-tienda">
+                <h2>🏷️ Ofertas Especiales</h2>
+                <div class="productos-carrusel">
+                    
+                    <div class="producto-card" data-id="9">
+                        <img src="titular2024.png" alt="Camiseta Temporada Anterior">
+                        <h3>Camiseta 2024 (Promo)</h3>
+                        <p class="precio-anterior">$28.000</p>
+                        <p class="precio-oferta">$19.999</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+
+                    <div class="producto-card" data-id="10">
+                        <img src="gorra.jpg" alt="Gorra Oficial River">
+                        <h3>Gorra Clásica</h3>
+                        <p class="precio-anterior">$12.000</p>
+                        <p class="precio-oferta">$8.500</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+                    
+                    <div class="producto-card" data-id="11">
+                        <img src="mochila.jfif" alt="Mochila River">
+                        <h3>Mochila Deportiva</h3>
+                        <p class="precio-anterior">$20.000</p>
+                        <p class="precio-oferta">$14.999</p>
+                        <button class="btn-carrito">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="carrito.html" style="text-align: center; display: block; margin-top: 30px; font-weight: bold; color: var(--color-rojo-banda);">Ver Mi Carrito de Compras</a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Club Atlético River Plate. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
